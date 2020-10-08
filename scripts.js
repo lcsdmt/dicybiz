@@ -61,9 +61,7 @@ class Die {
     }
 };
 
-makeDieBtn.addEventListener("click", () => {
-    new Die();
-});
+makeDieBtn.addEventListener("click", () => new Die());
 
 rollBtn.addEventListener("click", () => {
     dieArr.forEach(dice => {
