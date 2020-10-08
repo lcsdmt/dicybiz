@@ -26,7 +26,6 @@ btnContainer.appendChild(makeDieBtn);
 btnContainer.appendChild(rollBtn);
 btnContainer.appendChild(dieSumBtn);
 body.appendChild(btnContainer);
-// body.appendChild(divContainer);
 body.appendChild(dieDiv);
 
 
@@ -39,13 +38,20 @@ class Die {
         this.roll();
         dieDiv.appendChild(this.dice)
         dieArr.push(this)
-        this.dice.addEventListener("click", () =>{
+        this.dice.addEventListener("click", () => {
             this.roll();
         })
         this.dice.addEventListener("dblclick", () => {
             document.getElementById("dieDiv").removeChild(this.dice);
             let index = dieArr.indexOf(this);
-            dieArr.splice(index,1);
+            dieArr.splice(index, 1);
+
+        })
+        this.dice.addEventListener("mouseenter", () => {
+            this.dice.style.color = "black";
+        })
+        this.dice.addEventListener("mouseleave", () => {
+            this.dice.style.color = "cornsilk";
         })
     }
     roll() {
@@ -66,15 +72,24 @@ rollBtn.addEventListener("click", () => {
 });
 
 dieSumBtn.addEventListener("click", () => {
-    
+
     dieArr.forEach(dice => {
         sumArr.push(dice.value);
     }
     )
-    
+
     let total = sumArr.reduce(function (a, b) {
         return a + b;
     }, 0);
-    alert(`Total: ${total}`)
+    alert(`SumBODY once told me...your dice total: ${total}`)
     sumArr = []
 });
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}

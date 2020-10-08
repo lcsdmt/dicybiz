@@ -1,4 +1,7 @@
 .dice{
+    border: medium inset;
+    border-radius: 20px;
+    box-shadow: 10px 10px 8px #888888;
     height: 100px;
     width: 100px;
     background-color: blueviolet;
