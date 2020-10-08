@@ -1,3 +1,13 @@
+body{
+    background-color: black;
+}
+
+button{
+    font-family: monospace;
+    font-size: x-large;  
+    text-decoration: underline;
+}
+
 .dice{
     border: medium inset;
     border-radius: 20px;
@@ -13,6 +23,8 @@
     float: left;
     font-family: monospace;
     font-size: xx-large;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 10px;
 }
 
 #dieDiv{
@@ -26,4 +38,5 @@
     justify-content: space-between;
     padding-left: 350px;
     padding-right: 350px;
+    margin-top: 10px;
 }
